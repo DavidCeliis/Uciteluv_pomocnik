@@ -28,7 +28,7 @@ function Student() {
       {students.slice(studentslenght - 1).map((student) => (
         <React.Fragment key={student.id}>
             <div>
-                <span style={{fontWeight: "bold"}}>{student.name}</span>
+                <span>{student.name}</span>
             </div>
         </React.Fragment>
       ))}

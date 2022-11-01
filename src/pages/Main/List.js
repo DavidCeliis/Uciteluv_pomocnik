@@ -15,6 +15,7 @@ function List() {
  };
   return (
     <div className='MainDiv'>
+
       <h1>Seznam</h1>
       {students.map((student) => (
         <React.Fragment key={student.id}>
@@ -23,6 +24,7 @@ function List() {
             </div>
         </React.Fragment>
       ))}
+       <div style={{fontWeight: "bold"}}>Počet studentů: {students.length}</div>
       <button className='btn btn-success' onClick={handleMix}>Zamixovat</button>
     </div>
   )

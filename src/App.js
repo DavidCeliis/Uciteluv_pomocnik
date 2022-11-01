@@ -42,8 +42,6 @@ const App = () => {
       <Route path="/Settings" element={<Settings />} />
       <Route path="/Student" element={<Student />} />
       <Route path="/Number" element={<Number />} />
-      <Route path="/Number/:min" element={<Number />} />
-      <Route path="/Number/:max" element={<Number />} />
       <Route path="/Number/:min/:max" element={<Number />} />
       <Route path="*" element={<NotFound />} />
     </Routes>

@@ -1,12 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
 import Slider from '@mui/material/Slider';
+import { useParams } from 'react-router-dom';
 
 export default function Number() {
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(10);
   const [rnd, setRnd] = useState(5);
-
   const handleRandom = () => {
     if(min < max){
       setRnd(Math.floor(Math.random()* (max - min + 1) + min))
