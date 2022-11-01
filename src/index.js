@@ -3,11 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import ErrorFallback  from "./pages/Special/ErrorFallback";
+import { ErrorBoundary } from 'react-error-boundary'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
+// const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    {/* <ErrorBoundary FallbackComponent={ErrorFallback}> */}
+    <BrowserRouter>
     <App />
+    </BrowserRouter>
+    {/* </ErrorBoundary> */}
   </React.StrictMode>
 );
 

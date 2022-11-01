@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+h1,p,h2,.MainDiv {
+  margin: auto;
+  text-align: center;
+}
+.numberInput{
+  width: 50px;
+}
+ .btn{
+  margin: 10px;
+  box-shadow: 0 9px #999;
+}
+.btn:active{
+  background-color: #3e8e41;
+  box-shadow: 0 7px #666;
+  transform: translateY(2px);
+}
