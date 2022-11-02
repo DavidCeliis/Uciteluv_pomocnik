@@ -20,14 +20,10 @@ function Student() {
   return (
     <div className='MainDiv'>
       <h1>Náhodný student</h1>
-      {/* <h1>{!student
-          ? "Dnešní šťastilvec bude.."
-          : student
-      }</h1> */}
       <button className= "btn btn-primary" onClick={()=>handleGetStudent()}>Vybrat!</button>
       {students.slice(studentslenght - 1).map((student) => (
-        <React.Fragment key={student.id}>
-            <div>
+        <React.Fragment key={student.id} >
+            <div className="zoom-in-out-box">
                 <span>{student.name}</span>
             </div>
         </React.Fragment>

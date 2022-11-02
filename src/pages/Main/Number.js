@@ -1,14 +1,25 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Slider from '@mui/material/Slider';
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 
 export default function Number() {
-  const [min, setMin] = useState(0);
-  const [max, setMax] = useState(10);
-  const [rnd, setRnd] = useState(5);
+  const [min, setMin] = useState(1);
+  const [max, setMax] = useState(20);
+  const [rnd, setRnd] = useState(1);
+  const{inputmin} = useParams();
+  const{inputmax} = useParams();
+  useEffect(()=>{
+   if(inputmin, inputmax){
+    setMin(inputmin);
+    setMax(inputmax);
+    // console.log(inputmax, inputmin, max, min)
+    setRnd(Math.floor(Math.random()* (inputmax - inputmin + 1) + inputmin))
+   }
+},[])
   const handleRandom = () => {
     if(min < max){
+
       setRnd(Math.floor(Math.random()* (max - min + 1) + min))
     }
     else {
@@ -18,12 +29,12 @@ export default function Number() {
   };
   return (
     <div className='MainDiv'>
-      <h1 style={{fontSize:200}}>{rnd}</h1>
+      <h1 className='zoom-in-out-box' style={{fontSize:200}}>{rnd}</h1>
       <p>Minimální hodnota</p>
       <Slider
       type="number"
       value = {min}
-      defaultValue={50} 
+      min={1} 
       aria-label="Default" 
       valueLabelDisplay="auto"
       style={{width: "200px", margin: "auto"}}
@@ -32,7 +43,7 @@ export default function Number() {
        <Slider
       type="number"
       value = {max}
-      defaultValue={50} 
+      min={2}
       aria-label="Default" 
       valueLabelDisplay="auto"
       style={{width: "200px", margin: "auto"}}

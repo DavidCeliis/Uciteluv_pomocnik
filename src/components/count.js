@@ -1,4 +1,4 @@
-import React, {useState, Component} from "react";
+import React, {Component} from "react";
 import Slider from '@mui/material/Slider';
 
 class CountDown extends Component {
@@ -41,6 +41,9 @@ class CountDown extends Component {
       }
     } else {
       clearInterval(this.timer);
+    }
+    if(hours, minutes, seconds == 0){
+      alert("Čas vypršel!")
     }
   }
   stopTimer = () => {

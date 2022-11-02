@@ -1,12 +1,9 @@
-
-import { Link, Routes, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 import Home from "./pages/Main/Home"
 import NotFound from "./pages/Special/NotFound";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Button from 'react-bootstrap/Button';
 import './App.css';
 import Number from "./pages/Main/Number";
 import Count from "./pages/Main/Count";
@@ -36,13 +33,11 @@ const App = () => {
        <Route path="/" element={<Home/>}/>
       <Route path="/Home" element={<Home/>}/>
       <Route path="/Count" element={<Count/>}/>
-      {/* <Route path="/Order/:number" element={<Order />} />
-      <Route path="/Order" element={<Order />} /> */}
       <Route path="/List" element={<List />} />
       <Route path="/Settings" element={<Settings />} />
       <Route path="/Student" element={<Student />} />
       <Route path="/Number" element={<Number />} />
-      <Route path="/Number/:min/:max" element={<Number />} />
+      <Route path="/Number/:inputmin/:inputmax" element={<Number />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
     </>
