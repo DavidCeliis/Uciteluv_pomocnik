@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import Slider from '@mui/material/Slider';
-import { useParams, useSearchParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 export default function Number() {
   const [min, setMin] = useState(1);
@@ -12,10 +12,19 @@ export default function Number() {
 
   useEffect(()=>{
    if(inputmin && inputmax){
-    
-    setMin(parseInt(inputmin));
-    setMax(parseInt(inputmax));
-    setRnd(Math.floor(Math.random()* (parseInt(inputmax) - parseInt(inputmin) + 1) + parseInt(inputmin)))
+    const newmax = parseInt(inputmax)
+    const newmin = parseInt(inputmin)
+    if(newmax > 100 || newmin < 1){
+      alert("Zadali jste neplatné hodnoty! Zadejte v rozmezí 1-100")
+    }
+    else if(newmin < newmax)
+    {
+      setMin(newmin);
+      setMax(newmax);
+      setRnd(Math.floor(Math.random()* (newmax - newmin + 1) + newmin))}
+    else{
+      alert("Minimální hodnota nemůže být větší nebo rovna jak maximální!")
+    }
    }
 },[])
   const handleRandom = () => {
@@ -24,7 +33,7 @@ export default function Number() {
       setRnd(Math.floor(Math.random()* (max - min + 1) + min))
     }
     else {
-      alert("Minimální hodnota nemůže být větší než maximální!")
+      alert("Minimální hodnota nemůže být větší nebo rovna jak maximální!")
     }
     
   };
