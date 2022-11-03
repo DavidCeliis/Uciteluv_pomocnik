@@ -9,12 +9,13 @@ export default function Number() {
   const [rnd, setRnd] = useState(1);
   const{inputmin} = useParams();
   const{inputmax} = useParams();
+
   useEffect(()=>{
-   if(inputmin, inputmax){
-    setMin(inputmin);
-    setMax(inputmax);
-    // console.log(inputmax, inputmin, max, min)
-    setRnd(Math.floor(Math.random()* (inputmax - inputmin + 1) + inputmin))
+   if(inputmin && inputmax){
+    
+    setMin(parseInt(inputmin));
+    setMax(parseInt(inputmax));
+    setRnd(Math.floor(Math.random()* (parseInt(inputmax) - parseInt(inputmin) + 1) + parseInt(inputmin)))
    }
 },[])
   const handleRandom = () => {
